@@ -1,6 +1,7 @@
 var Twitter = require('twitter');
 var keys = require('./keys.js')
 var spotify = require('spotify')
+var request = require('request')
 
 var client = new Twitter({
 	consumer_key: keys.twitterKeys.consumer_key,
@@ -24,10 +25,15 @@ var showTweets = function() {
 	  	}
 	});
 
-
 }
 
-var spotifyInfo = function(song) {
+var spotifyInfo = function() {
+
+	var song = "What's My Age Again"
+
+	if (process.argv[3] != null) {
+		song = process.argv[3]
+	};
 	
 	spotify.search({type: 'track', query: song}, function(err, data) {
 
@@ -57,7 +63,31 @@ var spotifyInfo = function(song) {
 }
 
 var movieInfo = function() {
-	console.log('Coming soon!')
+
+	var movie = "Mr. Nobody";
+
+	if (process.argv[3] != null) {
+		movie = process.argv[3]
+	};
+
+	request('http://www.omdbapi.com/?t=' + movie + '&y=&plot=short&r=json&tomatoes=true', function (error, response, body) {
+		if (!error && response.statusCode == 200) {
+			var json = JSON.parse(body);
+			console.log(" ")
+			console.log("===== OMDB Search Results =====")
+			console.log(" ")
+			console.log("Title: " + json.Title)
+			console.log("Year: " + json.Year)
+			console.log("IMDB Rating: " + json.imdbRating)
+			console.log("Country: " + json.Country)
+			console.log("Language: " + json.Language)
+			console.log("Plot: " + json.Plot)
+			console.log("Actors: " + json.Actors)
+			console.log("Rotten Tomatoes Rating: " + json.tomatoRating)
+			console.log("Rotten Tomatoes URL: " + json.tomatoURL)
+		}
+	})
+
 }
 
 switch(process.argv[2]) {
@@ -65,7 +95,7 @@ switch(process.argv[2]) {
 		showTweets();
 		break;
 	case 'spotify-this-song':
-		spotifyInfo(process.argv[3]);
+		spotifyInfo();
 		break;
 	case 'movie-this':
 		movieInfo();
