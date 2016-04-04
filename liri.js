@@ -2,6 +2,7 @@ var Twitter = require('twitter');
 var keys = require('./keys.js')
 var spotify = require('spotify')
 var request = require('request')
+var fs = require('fs')
 
 var client = new Twitter({
 	consumer_key: keys.twitterKeys.consumer_key,
@@ -90,6 +91,19 @@ var movieInfo = function() {
 
 }
 
+var doWhatItSays = function() {
+	fs.readFile('./random.txt', 'utf8', function(err, data) {
+
+		if (err) throw err;
+		
+		var split = data.split(",")
+		console.log(split)
+
+		
+
+	})
+}
+
 switch(process.argv[2]) {
 	case 'my-tweets': 
 		showTweets();
@@ -99,6 +113,9 @@ switch(process.argv[2]) {
 		break;
 	case 'movie-this':
 		movieInfo();
+		break;
+	case 'do-what-it-says':
+		doWhatItSays();
 		break;
 	default:
 		console.log("I'm sorry Dave, I'm afraid I can't do that..");
@@ -116,3 +133,5 @@ switch(process.argv[2]) {
 // });
 
 // console.log(keys)
+
+// console.log( "spotify-this-song,'I Want it That Way'".split(",") )
