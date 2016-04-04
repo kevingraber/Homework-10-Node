@@ -30,14 +30,27 @@ var showTweets = function() {
 var spotifyInfo = function(song) {
 	
 	spotify.search({type: 'track', query: song}, function(err, data) {
+
 		console.log(" ")
 		console.log("===== Spotify Search Results =====")
 		console.log(" ")
 		console.log("Song: " + data.tracks.items[0].name)
 		console.log("Album: " + data.tracks.items[0].album.name)
-		console.log("Artist: " + data.tracks.items[0].artists[0].name)
+
+		var numOfArtists = data.tracks.items[0].artists.length
+		var artistArray = []
+
+		for (var i = 0; i < numOfArtists; i++) {
+			artistArray.push(data.tracks.items[0].artists[i].name)
+		}
+
+		console.log("Artist(s): " + artistArray)
+
+		// console.log("Artist(s): " + data.tracks.items[0].artists[0].name)
+
+
 		console.log("Preview URL: " + data.tracks.items[0].preview_url)
-		
+		// console.log(data)
 		
 	})
 
