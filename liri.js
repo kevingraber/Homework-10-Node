@@ -4,6 +4,21 @@ var spotify = require('spotify')
 var request = require('request')
 var fs = require('fs')
 
+fs.appendFile('log.txt', '===== New Command =====' + '\n', function(err) {
+	if (err) throw err;
+})
+
+for (var i = 2; i < process.argv.length; i++) {
+	fs.appendFile('log.txt', process.argv[i] + ' ', function(err) {
+		if (err) throw err;
+  		console.log('The "data to append" was appended to file!');
+	})
+}
+
+fs.appendFile('log.txt', '\n', function(err) {
+	if (err) throw err;
+})
+
 var client = new Twitter({
 	consumer_key: keys.twitterKeys.consumer_key,
 	consumer_secret: keys.twitterKeys.consumer_secret,
@@ -18,7 +33,9 @@ var showTweets = function() {
 	var params = {screen_name: 'kjg310'};
 	client.get('statuses/user_timeline', params, function(error, tweets, response){
 	  	if (!error) {
+	  		console.log(" ")
 		  	for (var i = 0; i < 20; i++) {
+		  		console.log(" ")
 		  		console.log("===== Tweet " + (i + 1) + " =====")
 		  		console.log(tweets[i].text);
 		    	console.log(tweets[i].created_at);
@@ -28,12 +45,12 @@ var showTweets = function() {
 
 }
 
-var spotifyInfo = function() {
+var spotifyInfo = function(userSong) {
 
 	var song = "What's My Age Again"
 
-	if (process.argv[3] != null) {
-		song = process.argv[3]
+	if (userSong != null) {
+		song = userSong
 	};
 	
 	spotify.search({type: 'track', query: song}, function(err, data) {
@@ -63,12 +80,12 @@ var spotifyInfo = function() {
 
 }
 
-var movieInfo = function() {
+var movieInfo = function(userMovie) {
 
 	var movie = "Mr. Nobody";
 
-	if (process.argv[3] != null) {
-		movie = process.argv[3]
+	if (userMovie != null) {
+		movie = userMovie;
 	};
 
 	request('http://www.omdbapi.com/?t=' + movie + '&y=&plot=short&r=json&tomatoes=true', function (error, response, body) {
@@ -95,11 +112,25 @@ var doWhatItSays = function() {
 	fs.readFile('./random.txt', 'utf8', function(err, data) {
 
 		if (err) throw err;
-		
-		var split = data.split(",")
-		console.log(split)
 
-		
+		var split = data.split(",")
+
+		switch(split[0]) {
+			case 'my-tweets': 
+				showTweets();
+				break;
+			case 'spotify-this-song':
+				spotifyInfo(split[1]);
+				break;
+			case 'movie-this':
+				movieInfo(split[1]);
+				break;
+			case 'do-what-it-says':
+				doWhatItSays();
+				break;
+			default:
+				console.log("I'm sorry Dave, I'm afraid I can't do that..");
+		}		
 
 	})
 }
@@ -109,10 +140,10 @@ switch(process.argv[2]) {
 		showTweets();
 		break;
 	case 'spotify-this-song':
-		spotifyInfo();
+		spotifyInfo(process.argv[3]);
 		break;
 	case 'movie-this':
-		movieInfo();
+		movieInfo(process.argv[3]);
 		break;
 	case 'do-what-it-says':
 		doWhatItSays();
