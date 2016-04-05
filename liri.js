@@ -1,23 +1,30 @@
+// Requiring the external files and node packages liri needs
 var Twitter = require('twitter');
 var keys = require('./keys.js')
 var spotify = require('spotify')
 var request = require('request')
 var fs = require('fs')
 
-fs.appendFile('log.txt', '===== New Command =====' + '\n', function(err) {
+var time = Date()
+
+// fs.appendFileSync('log.txt', '===== New Command =====' + '\n' + 'User Input: ', 'utf8', function(err) {
+// 	if (err) throw err;
+// })
+
+fs.appendFileSync('log.txt', '===== New Command ' + time + ' =====' + '\n' + 'User Input: ', 'utf8', function(err) {
 	if (err) throw err;
 })
 
 for (var i = 2; i < process.argv.length; i++) {
-	fs.appendFile('log.txt', process.argv[i] + ' ', function(err) {
+	fs.appendFileSync('log.txt', process.argv[i] + ' ', 'utf8', function(err) {
 		if (err) throw err;
   		console.log('The "data to append" was appended to file!');
 	})
 }
 
-fs.appendFile('log.txt', '\n', function(err) {
-	if (err) throw err;
-})
+// fs.appendFileSync('log.txt', '\n', 'utf8', function(err) {
+// 	if (err) throw err;
+// })
 
 var client = new Twitter({
 	consumer_key: keys.twitterKeys.consumer_key,
@@ -35,11 +42,21 @@ var showTweets = function() {
 	  	if (!error) {
 	  		console.log(" ")
 		  	for (var i = 0; i < 20; i++) {
-		  		console.log(" ")
-		  		console.log("===== Tweet " + (i + 1) + " =====")
+		  		console.log(" ");
+		  		console.log("===== Tweet " + (i + 1) + " =====");
 		  		console.log(tweets[i].text);
 		    	console.log(tweets[i].created_at);
+
+		    	var twitterData = "Tweet " + (i + 1) + " " + tweets[i].text + " " + tweets[i].created_at;
+
+		    	fs.appendFileSync('log.txt', '\n' + twitterData + '\n', 'utf8', function(err) {
+					if (err) throw err;
+			  		console.log('The "data to append" was appended to file!');
+				})
 			}
+			fs.appendFileSync('log.txt', '\n' , 'utf8', function(err) {
+				if (err) throw err;
+			})
 	  	}
 	});
 
@@ -75,6 +92,13 @@ var spotifyInfo = function(userSong) {
 
 		console.log("Preview URL: " + data.tracks.items[0].preview_url)
 		// console.log(data)
+
+		var spotifyData = "Song: " + data.tracks.items[0].name + '\n' + "Album: " + data.tracks.items[0].album.name + '\n' + "Artist(s): " + artistArray + '\n' + "Preview URL: " + data.tracks.items[0].preview_url + '\n';
+
+		fs.appendFileSync('log.txt', '\n' + spotifyData + '\n', 'utf8', function(err) {
+			if (err) throw err;
+	  		console.log('The "data to append" was appended to file!');
+		})
 		
 	})
 
@@ -103,9 +127,25 @@ var movieInfo = function(userMovie) {
 			console.log("Actors: " + json.Actors)
 			console.log("Rotten Tomatoes Rating: " + json.tomatoRating)
 			console.log("Rotten Tomatoes URL: " + json.tomatoURL)
+
+			var movieData = "Title: " + json.Title + '\n' + "Year: " + json.Year + '\n' + "IMDB Rating: " + json.imdbRating + '\n' + "Country: " + json.Country + '\n' + "Language: " + json.Language + '\n' + "Plot: " + json.Plot + '\n' + "Actors: " + json.Actors + '\n' + "Rotten Tomatoes Rating: " + json.tomatoRating + '\n' + "Rotten Tomatoes URL: " + json.tomatoURL + '\n';
+
+			fs.appendFileSync('log.txt', '\n' + movieData + '\n', 'utf8', function(err) {
+				if (err) throw err;
+		  		console.log('The "data to append" was appended to file!');
+			});
+
 		}
 	})
 
+}
+
+var invalidCommand = function() {
+	console.log("I'm sorry Dave, I'm afraid I can't do that...");
+	fs.appendFileSync('log.txt', '\n' + 'Unrecognized Command...' + '\n' + '\n', 'utf8', function(err) {
+		if (err) throw err;
+  		console.log('The "data to append" was appended to file!');
+	});
 }
 
 var doWhatItSays = function() {
@@ -129,7 +169,8 @@ var doWhatItSays = function() {
 				doWhatItSays();
 				break;
 			default:
-				console.log("I'm sorry Dave, I'm afraid I can't do that..");
+				invalidCommand();
+				// console.log("I'm sorry Dave, I'm afraid I can't do that..");
 		}		
 
 	})
@@ -149,20 +190,6 @@ switch(process.argv[2]) {
 		doWhatItSays();
 		break;
 	default:
-		console.log("I'm sorry Dave, I'm afraid I can't do that..");
+		invalidCommand();
+		// console.log("I'm sorry Dave, I'm afraid I can't do that..");
 }
-
-// var params = {screen_name: 'kjg310'};
-// client.get('statuses/user_timeline', params, function(error, tweets, response){
-//   	if (!error) {
-// 	  	for (var i = 0; i < 20; i++) {
-// 	  		console.log("===== Tweet " + (i + 1) + " =====")
-// 	  		console.log(tweets[i].text);
-// 	    	console.log(tweets[i].created_at);
-// 		}
-//   	}
-// });
-
-// console.log(keys)
-
-// console.log( "spotify-this-song,'I Want it That Way'".split(",") )

@@ -1,0 +1,37 @@
+===== New Command Tue Apr 05 2016 14:53:02 GMT-0400 (Eastern Daylight Time) =====
+User Input: get-me-coffee 
+Unrecognized Command...
+
+===== New Command Tue Apr 05 2016 14:53:48 GMT-0400 (Eastern Daylight Time) =====
+User Input: movie-this Rosemary's Baby 
+Title: Rosemary's Baby
+Year: 1968
+IMDB Rating: 8.0
+Country: USA
+Language: English
+Plot: A young couple move into an apartment, only to be surrounded by peculiar neighbors and occurrences. When the wife becomes mysteriously pregnant, paranoia over the safety of her unborn child begins to control her life.
+Actors: Mia Farrow, John Cassavetes, Ruth Gordon, Sidney Blackmer
+Rotten Tomatoes Rating: 8.8
+Rotten Tomatoes URL: http://www.rottentomatoes.com/m/rosemarys_baby/
+
+===== New Command Tue Apr 05 2016 14:54:14 GMT-0400 (Eastern Daylight Time) =====
+User Input: spotify-this-song The Somberlain 
+Song: The Somberlain
+Album: The Somberlain
+Artist(s): Dissection
+Preview URL: https://p.scdn.co/mp3-preview/3f01b798615515c35b7979bd9858c7e347ff50c9
+
+===== New Command Tue Apr 05 2016 14:54:26 GMT-0400 (Eastern Daylight Time) =====
+User Input: do-what-it-says 
+Song: I Want It That Way
+Album: The Hits--Chapter One
+Artist(s): Backstreet Boys
+Preview URL: https://p.scdn.co/mp3-preview/e72a05dc3f69c891e3390c3ceaa77fad02f6b5f6
+
+===== New Command Tue Apr 05 2016 14:57:10 GMT-0400 (Eastern Daylight Time) =====
+User Input: spotify-this-song Night's Blood 
+Song: Night's Blood
+Album: Storm Of The Light's Bane
+Artist(s): Dissection
+Preview URL: https://p.scdn.co/mp3-preview/aab3d0ac2a1c1121f0b9ee4511f78f49a74fc540
+
