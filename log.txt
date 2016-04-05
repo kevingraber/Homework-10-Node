@@ -35,3 +35,7 @@ Album: Storm Of The Light's Bane
 Artist(s): Dissection
 Preview URL: https://p.scdn.co/mp3-preview/aab3d0ac2a1c1121f0b9ee4511f78f49a74fc540
 
+===== New Command Tue Apr 05 2016 15:43:07 GMT-0400 (Eastern Daylight Time) =====
+User Input: get-me-coffee 
+Unrecognized Command...
+
