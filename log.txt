@@ -126,3 +126,90 @@ Album: The Hits--Chapter One
 Artist(s): Backstreet Boys
 Preview URL: https://p.scdn.co/mp3-preview/e72a05dc3f69c891e3390c3ceaa77fad02f6b5f6
 
+===== New Command Wed Apr 06 2016 18:05:21 GMT-0400 (Eastern Daylight Time) =====
+User Input: spotify-this-song The Somberlain 
+Song: The Somberlain
+Album: The Somberlain
+Artist(s): Dissection
+Preview URL: https://p.scdn.co/mp3-preview/3f01b798615515c35b7979bd9858c7e347ff50c9
+
+===== New Command Wed Apr 06 2016 18:05:48 GMT-0400 (Eastern Daylight Time) =====
+User Input: spotify-this-song 
+Song: What's My Age Again?
+Album: Enema Of The State (Explicit Version)
+Artist(s): blink-182
+Preview URL: https://p.scdn.co/mp3-preview/51b3254f8c1f6d0d8839227f37e82a1a62a27260
+
+===== New Command Wed Apr 06 2016 18:05:58 GMT-0400 (Eastern Daylight Time) =====
+User Input: do-what-it-says 
+Song: I Want It That Way
+Album: The Hits--Chapter One
+Artist(s): Backstreet Boys
+Preview URL: https://p.scdn.co/mp3-preview/e72a05dc3f69c891e3390c3ceaa77fad02f6b5f6
+
+===== New Command Wed Apr 06 2016 18:06:12 GMT-0400 (Eastern Daylight Time) =====
+User Input: my-tweets 
+Tweet 1 Ok something is wrong... maybe another tweet will solve all of my problems... Mon Apr 04 16:15:33 +0000 2016
+
+Tweet 2 Ok, back to work! Mon Apr 04 16:13:16 +0000 2016
+
+Tweet 3 But then I have to go back to working on the homework... Mon Apr 04 16:12:42 +0000 2016
+
+Tweet 4 2 More Tweets after this one! Mon Apr 04 16:12:23 +0000 2016
+
+Tweet 5 17 TWEETS ALMOST THERE Mon Apr 04 16:11:04 +0000 2016
+
+Tweet 6 They're coming to get you Barbara! Mon Apr 04 16:10:38 +0000 2016
+
+Tweet 7 I have come here to chew bubblegum and kick ass.. and I'm all out of bubblegum. Mon Apr 04 16:10:24 +0000 2016
+
+Tweet 8 Not all who wander are lost Mon Apr 04 16:09:16 +0000 2016
+
+Tweet 9 "Mess with the best, die like the rest" - Zero Cool Mon Apr 04 16:08:23 +0000 2016
+
+Tweet 10 I hope someone is reading these or all of this will have been for naught :( Mon Apr 04 16:06:08 +0000 2016
+
+Tweet 11 And I could definitely use some more coffee. Mon Apr 04 16:05:09 +0000 2016
+
+Tweet 12 Although I don't get free refills here.. Mon Apr 04 16:04:57 +0000 2016
+
+Tweet 13 Wow doing work in Barnes &amp; Noble is so much better than Starbucks. Mon Apr 04 16:04:48 +0000 2016
+
+Tweet 14 Who ever thought tweeting would be such hard work? Mon Apr 04 16:03:37 +0000 2016
+
+Tweet 15 Let's go for seven! Mon Apr 04 16:03:24 +0000 2016
+
+Tweet 16 Oh man now I'm up to six tweets! Mon Apr 04 16:03:11 +0000 2016
+
+Tweet 17 I only have 4 tweets to I have to add more so that my liri Node.js works! Mon Apr 04 16:02:48 +0000 2016
+
+Tweet 18 "Somewhere, something incredible is waiting to be known." -Carl Sagan via @kjg310 Wed Mar 30 19:15:39 +0000 2016
+
+Tweet 19 "Astronomy compels the soul to look upwards and leads us from this world to another." -Plato via @kjg310 Wed Mar 30 19:00:13 +0000 2016
+
+Tweet 20 "Logic is the beginning of wisdom, not the end." -Leonard Nimoy https://t.co/UT1eLQ5fcm via @kjg310 Sun Mar 27 20:35:38 +0000 2016
+
+===== New Command Wed Apr 06 2016 18:06:26 GMT-0400 (Eastern Daylight Time) =====
+User Input: movie-this 
+Title: Mr. Nobody
+Year: 2009
+IMDB Rating: 7.9
+Country: Belgium, Germany, Canada, France
+Language: English, Mohawk
+Plot: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
+Actors: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
+Rotten Tomatoes Rating: 6.6
+Rotten Tomatoes URL: http://www.rottentomatoes.com/m/mr-nobody/
+
+===== New Command Wed Apr 06 2016 18:06:39 GMT-0400 (Eastern Daylight Time) =====
+User Input: movie-this Night of the Living Dead 
+Title: Night of the Living Dead
+Year: 1968
+IMDB Rating: 8.0
+Country: USA
+Language: English
+Plot: A group of people hide from bloodthirsty zombies in a farmhouse.
+Actors: Duane Jones, Judith O'Dea, Karl Hardman, Marilyn Eastman
+Rotten Tomatoes Rating: 8.8
+Rotten Tomatoes URL: http://www.rottentomatoes.com/m/1015052-night_of_the_living_dead/
+
